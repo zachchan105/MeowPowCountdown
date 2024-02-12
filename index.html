@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>MeowPow Activation Countdown</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,8 @@
     <meta name="author" content="">
     <meta property="og:image" content="{{site.logo}}"/>
     <meta property="og:title" content="MeowPow Countdown"/>
-    <meta property="og:url"  content="{{site.url}}"/>
-    <meta property="og:type"  content="website"/>
+    <meta property="og:url" content="{{site.url}}"/>
+    <meta property="og:type" content="website"/>
 
     <!-- Font from google -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -23,43 +23,128 @@
     <!-- custom styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="row">
-      <div class="col-sm-12 text-center">
-				<h1 class="background-highlight">{{site.name}}</h1>
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="background-highlight">{{site.name}}</h1>
         <h2 class="background-highlight"></h2>
-	       <a><img src="{{site.logo}}" style="width:40%"/></a>
-      </div>
-    </div> <!-- /row -->
+        <a><img src="{{site.logo}}" style="width:40%"/></a>
+    </div>
+</div> <!-- /row -->
 
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center"><div id="defaultCountdown"></div></div>
-    </div> <!-- /row -->
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <div id="defaultCountdown"></div>
+    </div>
+</div> <!-- /row -->
 
-    <!-- <div class="row">
-      <div class="col-sm-12 text-center">
+<div class="row">
+    <div class="col-sm-12 text-center">
         <h2 class="background-highlight">{{ site.utc | date: "%A %B %-d, %Y" }}</h2>
-      </div>
-    </div> -->
+    </div>
+</div>
+
+<!-- Introduction -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Introduction:</h3>
+        <p>
+            MeowPow represents a significant evolution in cryptocurrency mining algorithms, refining the foundation established by ProgPow while introducing tailored adjustments to better align with Meowcoin’s goals. This new approach promises to deliver meaningful changes to the mining landscape, offering improvements in efficiency and reducing power consumption.
+        </p>
+    </div>
+</div>
+
+<!-- Dag Change -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Dag Change:</h3>
+        <p>
+            A pivotal aspect of MeowPow's evolution is its approach to the Directed Acyclic Graph (DAG) size. Scheduled for transition at epoch 128, MeowPow seamlessly scales the DAG size to 4GB, a move aimed at optimizing efficiency and ensuring compatibility with contemporary mining operations. This transition involves multiplying the epoch value by three, a forward-looking strategy intended to future-proof the algorithm against older cards operating on low electricity costs in large numbers.
+        </p>
+    </div>
+</div>
+
+<!-- Mining -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Mining:</h3>
+        <p>
+            MeowPow's mining protocol is supported by the meowpowminer, a specialized mining software designed to operate on the algorithm's intricacies. Notable considerations include difficulty adjustments and hardware compatibility, ensuring a smooth and potentially more efficient mining experience. Updates to meowpowminer will be closely monitored to maintain optimal performance as the network evolves.
+        </p>
+    </div>
+</div>
+
+<!-- Integration -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Integration:</h3>
+        <p>
+            The integration of MeowPow into the mainnet ecosystem requires strategic coordination and proactive measures. Widely adopted among exchanges, pools, and mining software, MeowPow aims to minimize disruptions while maximizing network compatibility and security. Careful attention to detail will be essential in ensuring a seamless transition.
+        </p>
+    </div>
+</div>
+
+<!-- Technical Details -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Technical Details:</h3>
+        <p>
+            MeowPow Parameters:
+            <ul>
+                <li>Period Length: 6</li>
+                <li>Number of Registers (num_regs): 16</li>
+                <li>Number of Lanes (num_lanes): 16</li>
+                <li>Number of Cache Accesses (num_cache_accesses): 6</li>
+                <li>Number of Math Operations (num_math_operations): 9</li>
+                <li>L1 Cache Size: 16 * 1024</li>
+                <li>L1 Cache Number of Items: Calculated based on L1 cache size</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+<!-- Testnet Deployment -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Testnet Deployment:</h3>
+        <p>
+            To initiate a MeowPow testnet, configure the meowcoin.conf file to include <code>testnet=1</code>. Nodes must be manually added to the testnet. Provided below are a few node IP addresses for reference:
+            <ul>
+                <li>51.159.168.212</li>
+                <li>144.91.115.96</li>
+                <li>99.233.25.27</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+<!-- Conclusion -->
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Conclusion:</h3>
+        <p>
+            MeowPow signifies a notable advancement in mining algorithm development, presenting exciting changes that have the potential to enhance efficiency and decrease power consumption. As the MeowPow ecosystem matures and gains acceptance, it signals a new phase in mining algorithms, tailored to meet the evolving needs of the blockchain community.
+        </p>
+    </div>
 </div>
 
 <!-- JavaScript includes -->
 <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 <script src="assets/js/jquery.countdown.min.js"></script>
 
-    <!-- start the countdown when the page loads -->
-    <script type="text/javascript">
-  		$(function () {
-  			var holiday = new Date();
-  			holiday = new Date("{{site.utc}}");
-  			$('#defaultCountdown').countdown({until: holiday});
-  			$('#year').text(holiday.getFullYear());
-  		});
-		</script>
-    <!-- end of javascript includes  -->
+<!-- start the countdown when the page loads -->
+<script type="text/javascript">
+    $(function () {
+        var holiday = new Date();
+        holiday = new Date("{{site.utc}}");
+        $('#defaultCountdown').countdown({until: holiday});
+        $('#year').text(holiday.getFullYear());
+    });
+</script>
+<!-- end of javascript includes  -->
 
-  </body>
+</body>
 </html>
