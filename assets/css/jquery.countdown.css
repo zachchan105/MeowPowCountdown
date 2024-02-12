@@ -8,6 +8,7 @@
 }
 .countdown_holding span {
 	color: #888;
+	font-size: 300%; /* Increase font size for countdown holding */
 }
 .countdown_row {
 	clear: both;
