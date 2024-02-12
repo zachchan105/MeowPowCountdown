@@ -45,12 +45,14 @@
             line-height: 1.5;
             color: #666;
             margin-bottom: 30px;
+            text-align: left; /* Align text left */
         }
 
         /* Style for lists */
         .section-content ul {
-            list-style-type: disc;
-            margin-left: 20px;
+            list-style-type: none; /* Remove bullet points */
+            margin-left: 0; /* Remove default left margin */
+            padding-left: 20px; /* Add some padding for indentation */
         }
     </style>
 </head>
@@ -64,7 +66,7 @@
             </div>
         </div> <!-- /row -->
 
-        <div class="row">
+        <div class="row" style="margin-top: 20px;"> <!-- Add some margin top -->
             <div class="col-sm-12 text-center">
                 <div id="defaultCountdown"></div>
             </div>
