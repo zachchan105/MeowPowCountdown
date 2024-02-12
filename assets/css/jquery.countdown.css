@@ -32,5 +32,6 @@
   .countdown_section {
     display: block;
     width: 100%;
+    font-size: 150%; /* Reduce font size for countdown text on mobile */
   }
 }
