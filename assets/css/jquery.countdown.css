@@ -28,7 +28,7 @@
 }
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
+@media only screen and (max-device-width: 768px) {
   .countdown_section {
     display: block;
     width: 100%;
