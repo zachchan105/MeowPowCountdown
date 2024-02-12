@@ -51,3 +51,12 @@
 	display: block;
 	width: 100%;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .countdown_section {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+}
