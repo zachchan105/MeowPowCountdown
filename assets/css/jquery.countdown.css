@@ -15,6 +15,7 @@
 }
 .countdown_section {
 	display: block;
+	float: left;
 	font-size: 300%;
 	text-align: center;
 }
