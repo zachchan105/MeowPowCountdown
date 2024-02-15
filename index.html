@@ -148,12 +148,16 @@
     <!-- start the countdown when the page loads -->
     <script type="text/javascript">
         $(function() {
-            var holiday = new Date();
-            holiday = new Date("{{site.utc}}");
+            // Convert Unix epoch timestamp from seconds to milliseconds
+            var epochTimestamp = 1710799200 * 1000; // Your given timestamp
+            
+            var holiday = new Date(epochTimestamp);
+            
             $('#defaultCountdown').countdown({ until: holiday });
             $('#year').text(holiday.getFullYear());
         });
     </script>
+    
     <!-- end of javascript includes  -->
 
 </body>
