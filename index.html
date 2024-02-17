@@ -74,11 +74,11 @@
 
         <div class="row" style="margin-top: 20px;"> <!-- Add some margin top -->
             <div class="col-sm-12 text-center">
-                <p id="dagCountdown"></p>
+                <p id="dagCountdown" class="countdown-text"></p>
             </div>
         </div> <!-- /row -->
         
-
+    
 
         <div class="section">
           <h2 class="section-title"></h2>
@@ -171,7 +171,7 @@ fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
     .then(data => {
         // Extract the relevant information from the response
         const blockCount = data.primary.network.height;
-        const blocksUntilDAGChange = blockCount - 825000;
+        const blocksUntilDAGChange = 825000 - blockCount;
 
         // Display the information on the webpage
         const dagCountdownElement = document.getElementById('dagCountdown');
