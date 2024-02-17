@@ -164,20 +164,21 @@
         });
 
          // Fetch data from the external API
-         fetch('http://167.179.94.220/api/getblockcount')
-            .then(response => response.json())
-            .then(data => {
-                // Extract the relevant information from the response
-                const blockCount = data.blockcount;
-                const blocksUntilDAGChange = blockCount - 825000;
+fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
+    .then(response => response.json())
+    .then(data => {
+        // Extract the relevant information from the response
+        const blockCount = data.primary.network.height;
+        const blocksUntilDAGChange = blockCount - 825000;
 
-                // Display the information on the webpage
-                const dataElement = document.getElementById('data');
-                dataElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        // Display the information on the webpage
+        const dataElement = document.getElementById('data');
+        dataElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
     </script>
     
     <!-- end of javascript includes  -->
