@@ -77,6 +77,11 @@
             </div>
         </div> <!-- /row -->
 
+        <div class="section">
+            <h2 class="section-title"></h2>
+            <p class="section-content"></p>
+        </div>
+
         <div class="row" style="margin-top: 20px;"> <!-- Add some margin top -->
             <div class="col-sm-12 text-center">
                 <p id="dagCountdown" class="countdown-text"></p>
@@ -178,13 +183,22 @@ fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
         const blockCount = data.primary.network.height;
         const blocksUntilDAGChange = 825000 - blockCount;
 
+        // Calculate the approximate time until DAG size change
+        const minutesRemaining = blocksUntilDAGChange; // Assuming each block is 1 minute
+        const days = Math.floor(minutesRemaining / (60 * 24));
+        const weeks = Math.floor(days / 7);
+        const months = Math.floor(days / 30);
+        const remainingDays = days % 7;
+        const remainingWeeks = weeks % 4;
+
         // Display the information on the webpage
         const dagCountdownElement = document.getElementById('dagCountdown');
-        dagCountdownElement.textContent = `Blocks until DAG size is over 4GB: ${blocksUntilDAGChange}`;
+        dagCountdownElement.textContent = `Blocks until DAG size is over 4GB: ${blocksUntilDAGChange}. Approximate time: ${months} months, ${remainingWeeks} weeks, ${remainingDays} days.`;
     })
     .catch(error => {
         console.error('Error fetching data:', error);
     });
+
     </script>
     
     <!-- end of javascript includes  -->
