@@ -77,6 +77,7 @@
                 <p id="dagCountdown"></p>
             </div>
         </div> <!-- /row -->
+        
 
 
         <div class="section">
@@ -164,6 +165,7 @@
         });
 
          // Fetch data from the external API
+// Fetch data from the external API
 fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
     .then(response => response.json())
     .then(data => {
@@ -172,13 +174,12 @@ fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
         const blocksUntilDAGChange = blockCount - 825000;
 
         // Display the information on the webpage
-        const dataElement = document.getElementById('data');
-        dataElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
+        const dagCountdownElement = document.getElementById('dagCountdown');
+        dagCountdownElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
     })
     .catch(error => {
         console.error('Error fetching data:', error);
     });
-
     </script>
     
     <!-- end of javascript includes  -->
