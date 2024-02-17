@@ -180,7 +180,7 @@ fetch('https://coinminerz.com/api/v1/:Meowcoin/statistics')
 
         // Display the information on the webpage
         const dagCountdownElement = document.getElementById('dagCountdown');
-        dagCountdownElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
+        dagCountdownElement.textContent = `Blocks until DAG size is over 4GB: ${blocksUntilDAGChange}`;
     })
     .catch(error => {
         console.error('Error fetching data:', error);
