@@ -163,16 +163,21 @@
             $('#year').text(holiday.getFullYear());
         });
 
-        fetch('https://mewc.cryptoscope.io/api/getblockcount/')
-        .then(response => response.json())
-        .then(data => {
-            // Calculate blocks left until DAG change
-            const blocksLeft = data.blockcount - 825000;
-            
-            // Display blocks left
-            document.getElementById('dagCountdown').textContent = `Blocks left until DAG change: ${blocksLeft}`;
-        })
-        .catch(error => console.error('Error fetching block count:', error));
+         // Fetch data from the external API
+         fetch('https://mewc.cryptoscope.io/api/getblockcount/')
+            .then(response => response.json())
+            .then(data => {
+                // Extract the relevant information from the response
+                const blockCount = data.blockcount;
+                const blocksUntilDAGChange = blockCount - 825000;
+
+                // Display the information on the webpage
+                const dataElement = document.getElementById('data');
+                dataElement.textContent = `Blocks until DAG change: ${blocksUntilDAGChange}`;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     </script>
     
     <!-- end of javascript includes  -->
