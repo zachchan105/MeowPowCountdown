@@ -12,8 +12,7 @@ For those engaged in mining, ensure you're using software compatible with MeowPo
 
 - [meowpowminer (AMD/NVIDIA) v2.0.0](https://github.com/Meowcoin-Foundation/meowpowminer/releases/tag/v2.0.0)
 - [SRBMiner-Multi (AMD/NVIDIA) 2.4.9](https://github.com/doktor83/SRBMiner-Multi/releases/tag/2.4.9)
-
-TTMiner (NVIDIA) is also forthcoming and will provide optimized performance for MeowPow.
+- [TTMiner (NVIDIA) 2024.1.5](https://github.com/TrailingStop/TT-Miner-release/releases/tag/2024.1.5)
 
 ## Technical Implications of MeowPow Activation
 
